@@ -592,7 +592,7 @@ position: relative;
 
     background-color: rgba(46, 47, 66, 0.4);
 
-    
+    /* скрыто по умолчанию */
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -602,17 +602,18 @@ position: relative;
 }
 
 
+.backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
 .backdrop.is-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 
-.backdrop.is-open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
 
 .modal {
     position: absolute;
