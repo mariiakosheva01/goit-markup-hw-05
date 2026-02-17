@@ -592,18 +592,26 @@ position: relative;
 
     background-color: rgba(46, 47, 66, 0.4);
 
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
         visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 .backdrop.is-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+}
+
+.backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .modal {
@@ -619,7 +627,7 @@ position: relative;
     background-color: #fcfcfc;
     border-radius: 4px;
 
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(0.9);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -627,8 +635,8 @@ position: relative;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden .modal {
-    transform: translate(-50%, -50%) scale(0.9);
+.modal.is-open {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-close-btn {
@@ -782,7 +790,7 @@ position: relative;
     align-items: center;
     justify-content: center;
 
-    margin-right: 8px;
+    
 
     border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.4);
@@ -793,10 +801,7 @@ position: relative;
         border 250ms cubic-bezier(0.4, 0, 0.2, 1),
         fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-check-input {
-    position: absolute;
-    opacity: 0;
-}
+
 
 .modal-check-input:checked+.modal-check-label .modal-check-box {
     background-color: #404bbf;
@@ -848,7 +853,16 @@ position: relative;
 .footer-container {
     display: flex;
     align-items: baseline;
-    gap: 80px;
+    gap: 0px;
+}
+.footer-left {
+    margin-right: 120px;
+   
+}
+
+.footer-social {
+    margin-right: 80px;
+    
 }
 
 /* LEFT BLOCK */
@@ -932,7 +946,7 @@ position: relative;
 
     padding-left: 16px;
 
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid #ffffff;
     border-radius: 4px;
 
     background-color: transparent;
@@ -948,11 +962,11 @@ position: relative;
 }
 
 .footer-subscribe-input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
 }
 
 .footer-subscribe-input:focus {
-    border-color: #4d5ae5;
+    border-color: #31d0aa;
 }
 
 .footer-subscribe-btn {
@@ -984,7 +998,7 @@ position: relative;
 
 .footer-subscribe-btn:hover,
 .footer-subscribe-btn:focus {
-    background-color: #404bbf;
+    background-color:#31d0aa;
 }
 
 .footer-subscribe-icon {
